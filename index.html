@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ліна Костенко. Не треба класти руку на плече</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+      <ul class="menu">
+        <li><a href=""></a></li>
+        <li><a href="">У кожного</a></li>
+        <li><a href="">своя</a></li>
+        <li><a href="">пустеля</a></li>
+        <li><a href="">і свої міражі.</a></li>
+      </ul>
+    </nav>
+
+<div class="wrapper">     
+    <h2 class=title style="text-align: center;"><span><strong>Ліна Костенко &#8211; Не треба класти руку на плече</strong></span></h2>
+<p style="text-align: center;"><a href="">Не треба класти руку на плече.</a><br/>
+Цей рух доречний, може, тільки в танці.<br/>
+<a href="">Довіра</a> — звір полоханий, втече.<br/>
+Він любить тиху паморозь дистанцій.</p>
+<p style="text-align: center;">Він любить час. Хвилини. Дні. Роки.<br/>
+Він дивний звір, він любить навіть муку.<br/>
+Він любить навіть <a href="">відстань</a> і розлуку.<br/>
+Але не любить на плечі руки.</p>
+
+<p style="text-align: center;">У цих садах, в сонатах солов’їв,<br/>
+Він чує тихі кроки браконьєра.<br/>
+Він пастки жде від погляду, від слів,<br/>
+І цей спектакль йому вже не прем’єра.</p>
+<p style="text-align: center;">Душі людської туго і тайго!<br/>
+Це гарний звір, без нього зле живеться.<br/>
+Але <a href="">не треба кликати</a> його.<br/>
+Він прийде сам і вже не відсахнеться.</p>
+</div>
+
+  <script>
+   const triggers = document.querySelectorAll('a');
+   const highlight = document.createElement('span');
+   highlight.classList.add('highlight');
+   document.body.append(highlight);
+
+   function highlightLink() {   
+    //console.log('Highlight!!');
+     //console.log(this);
+     const linkCoords = this.getBoundingClientRect();
+     //console.log(coords);
+     const coords = {
+         width: linkCoords.width,
+         height: linkCoords.height,
+         top: linkCoords.top + window.scrollY,
+         left: linkCoords.left + window.scrollX,
+     }
+
+     highlight.style.width = `${coords.width}px`;
+     highlight.style.height = `${coords.height}px`;
+     highlight.style.transform = `translate(${coords.left}px, ${coords.top}px`;
+
+   }
+
+   triggers.forEach(a => a.addEventListener('mouseenter', highlightLink));
+
+
+  </script>
+</body>
+</html>
+
